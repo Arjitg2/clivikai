@@ -16,7 +16,7 @@ const works = [
   {
     title: "S-Three Fitness Template",
     link: "https://s-three-fitness.netlify.app/",
-    imageSrc: "https://res.cloudinary.com/dxvsqh2jw/image/upload/v1780293818/Home-Dentify-free-template_1_rgr7k7.png"
+    imageSrc: "https://res.cloudinary.com/dxvsqh2jw/image/upload/v1790945788/Screenshot_2026-10-02-18-22-14-47_6012fa4d4ddec268fc5c7112cbb265e71_yikgn2.jpg"
   },
 ];
 

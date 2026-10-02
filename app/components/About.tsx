@@ -1,5 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 import Image from "next/image";
+import Team from "./Team";
 
 export default function About() {
   return (
@@ -84,6 +85,9 @@ export default function About() {
           </div>
 
         </div>
+
+        {/* Team Section */}
+        <Team />
       </div>
       </ScrollReveal>
     </section>

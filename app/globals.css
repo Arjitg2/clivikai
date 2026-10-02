@@ -148,7 +148,7 @@ body {
   --sec-py: 192px;
   --title-size: 4.6em;
   --title-max-width: 70%;
-  --subpage-hero-pt: 208px;
+  --subpage-hero-pt: 146px;
   --about-text-max-width: 60%;
   
   --grid-2: 1fr 1fr;
@@ -220,7 +220,7 @@ body {
     --sec-py: 128px; /* Increased padding between sections */
     --title-size: 3.3em;
     --title-max-width: 100%;
-    --subpage-hero-pt: 116px;
+    --subpage-hero-pt: 81px;
     --about-text-max-width: 100%;
     --about-hero-pb: 32px;
     --about-founder-pt: 32px;

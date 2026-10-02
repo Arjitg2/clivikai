@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Image from "next/image";
 import Link from "next/link";
+import Team from "../components/Team";
 import { IconTarget, IconZap, IconMessageCircle, IconHandshake, IconTag, IconEye } from "../components/icons";
 
 const values = [
@@ -113,12 +114,15 @@ export default function AboutPage() {
             </button>
           </div>
         </div>
+
+        {/* Team Section */}
+        <Team />
       </section>
 
       {/* Values */}
       <section style={{ background: "#f2f2f7", paddingBottom: 80, paddingLeft: "clamp(20px,6vw,120px)", paddingRight: "clamp(20px,6vw,120px)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(2em, 3.8vw, 3.1em)", fontWeight: 700, color: "#0d0e1a", marginBottom: 40, textAlign: "center" }}>What We Stand For</h2>
+          <h2 style={{ fontSize: "clamp(2.9rem, 5.45vw, 4.6rem)", fontWeight: 700, color: "#0d0e1a", marginBottom: 40, textAlign: "center", letterSpacing: "-0.04em", lineHeight: 1.1 }}>What We Stand For</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {values.map(v => (
               <div key={v.title} style={{
