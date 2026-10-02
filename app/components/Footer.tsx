@@ -150,7 +150,7 @@ function ContactForm() {
 }
 
 const socialIcons = [
-  { icon: <IconInstagram size={18} color="currentColor" />, href: "#" },
+  { icon: <IconInstagram size={18} color="currentColor" />, href: "https://www.instagram.com/clivikdigital/?hl=en" },
   { icon: <IconX size={18} color="currentColor" />, href: "#" },
   { icon: <IconYoutube size={18} color="currentColor" />, href: "#" },
   { icon: <IconDribbble size={18} color="currentColor" />, href: "#" },
@@ -198,11 +198,11 @@ export default function Footer() {
               </p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                 {[
-                  { icon: <IconInstagram size={16} color="rgba(255,255,255,0.9)" />, text: "Instagram", href: "https://instagram.com" },
-                  { icon: <IconFacebook size={16} color="rgba(255,255,255,0.9)" />, text: "Facebook", href: "https://facebook.com" },
+                  { icon: <IconInstagram size={16} color="rgba(255,255,255,0.9)" />, text: "Instagram", href: "https://www.instagram.com/clivikdigital/?hl=en" },
+                  { icon: <IconFacebook size={16} color="rgba(255,255,255,0.9)" />, text: "Facebook", href: "https://www.facebook.com/profile.php?id=61589704865610" },
                   { icon: <IconWhatsApp size={16} color="rgba(255,255,255,0.9)" />, text: "WhatsApp", href: "https://wa.me/916265022474" },
                 ].map((s, i) => (
-                  <a key={i} href={s.href} style={{
+                  <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" style={{
                     color: "rgba(255,255,255,0.85)", textDecoration: "none", fontSize: "0.875rem",
                     transition: "color 0.2s", display: "inline-flex", alignItems: "center", gap: 8,
                     minHeight: 44, padding: "4px 8px",
