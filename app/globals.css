@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark: #0d0e1a;
+  --bg-dark-2: #12131f;
+  --bg-dark-card: #1a1b2e;
+  --bg-light: #f2f2f7;
+  --bg-light-card: #ffffff;
+  --accent: #6c3bff;
+  --accent-hover: #5a2fe0;
+  --accent-light: rgba(108, 59, 255, 0.15);
+  --text-white: #ffffff;
+  --text-light: #cbd5e1;
+  --text-muted-dark: #94a3b8;
+  --text-dark: #0d0e1a;
+  --text-muted: #4b5563;
+  --border-dark: rgba(255,255,255,0.08);
+  --border-light: rgba(0,0,0,0.08);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --shadow-card: 0 4px 40px rgba(0,0,0,0.08);
+  --shadow-dark: 0 8px 60px rgba(0,0,0,0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+/* Float animation for hero cards - buttery smooth */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  25% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+  75% { transform: translateY(8px) rotate(var(--rot, 0deg)); }
+}
+
+/* Badge pill - strict 4/8 spacing & typography scale */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.95);
+  color: #0d0e1a;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+}
+
+.badge-pill-dark {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+/* Optical Alignment Utilities */
+.optical-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.optical-arrow {
+  display: inline-block;
+  transform: translateY(0.5px);
+  transition: transform 0.2s ease;
+}
+
+/* Touch Target Utilities (Apple HIG 44px / Google Material 48px) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.touch-target-48 {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Process Arrows responsive */
+.process-arrow {
+  display: block;
+}
+@media (max-width: 1200px) {
+  .process-arrow {
+    display: none !important;
+  }
+}
+
+/* Responsive Variables for Mobile Optimization - 4/8 Spacing Scale */
+:root {
+  --sec-px: 80px;
+  --sec-py: 192px;
+  --title-size: 4.6em;
+  --title-max-width: 70%;
+  --subpage-hero-pt: 208px;
+  --about-text-max-width: 60%;
+  
+  --grid-2: 1fr 1fr;
+  --grid-3: repeat(3, 1fr);
+  --grid-4: repeat(4, 1fr);
+  
+  --hero-px: 80px;
+  --nav-px: 80px;
+  --hero-py: 80px;
+  --hero-cards-display: flex;
+  
+  --pricing-outer-px: 40px;
+  --pricing-outer-py: 120px;
+  --pricing-inner-px: 48px;
+  --pricing-inner-py: 80px;
+
+  --footer-grid-1: 1fr auto;
+  --footer-grid-2: 1.4fr auto auto;
+  --footer-cta-w: auto;
+  
+  --nav-links-display: flex;
+
+  /* Global Section Layout */
+  --sec-text-align: left;
+  --sec-mb: 64px;
+  --about-flex: row;
+  --works-flex: row;
+  --works-align: flex-end;
+  
+  --stats-grid: repeat(3, 1fr);
+  --stats-container-gap: 20px;
+  --stats-item-flex: column;
+  --stats-item-align: center;
+  --stats-item-text: center;
+  --stats-item-gap: 0px;
+  --stats-text-mt: 12px;
+  --stats-number: clamp(3em, 5vw, 4.2em);
+  --stats-label: 1.15em;
+
+  /* Hero layout */
+  --hero-grid: 1.2fr 0.8fr;
+  --hero-gap: 64px;
+  --hero-min-height: calc(100vh - 160px);
+  --hero-cards-height: 540px;
+  --hero-title-size: var(--title-size);
+  --hero-sub-size: 1.1em;
+  --hero-sub-max: 100%;
+  --hero-sub-wrap: nowrap;
+  --hero-text-align: left;
+  --hero-chips-justify: flex-start;
+  --hero-btn-flex: 0 0 auto;
+  --hero-py: 20px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sec-px: 40px;
+    --hero-px: 40px;
+    --grid-3: 1fr 1fr;
+    --grid-4: 1fr 1fr;
+    --footer-grid-2: 1fr 1fr;
+    --pricing-inner-px: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sec-px: 20px;
+    --sec-py: 128px; /* Increased padding between sections */
+    --title-size: 3.3em;
+    --title-max-width: 100%;
+    --subpage-hero-pt: 116px;
+    --about-text-max-width: 100%;
+    --about-hero-pb: 32px;
+    --about-founder-pt: 32px;
+    --about-founder-gap: 16px;
+    --about-founder-story-gap: 12px;
+    --contact-h2-mb: 12px;
+    --about-para-gap: 16px;
+    
+    --grid-2: 1fr;
+    --grid-3: 1fr;
+    --grid-4: 1fr;
+    
+    --hero-px: 20px;
+    --hero-py: 40px;
+    --hero-cards-display: none;
+    
+    --pricing-outer-px: 16px;
+    --pricing-outer-py: 48px;
+    --pricing-inner-px: 24px;
+    --pricing-inner-py: 40px;
+
+    --footer-grid-1: 1fr;
+    --footer-grid-2: 1fr;
+    --footer-cta-w: 100%;
+    
+    --logo-px: 20px;
+    --nav-px: 20px;
+    --nav-links-display: none;
+
+    /* Global Section Layout */
+    --sec-text-align: center;
+    --sec-mb: 32px; /* Consistent 4/8 spacing */
+    --about-flex: column;
+    --works-flex: column;
+    --works-align: center;
+
+    --stats-grid: 1fr;
+    --stats-container-gap: 40px;
+    --stats-item-flex: row;
+    --stats-item-align: center;
+    --stats-item-text: left;
+    --stats-item-gap: 24px;
+    --stats-text-mt: 0px;
+    --stats-number: 3.5em;
+    --stats-label: 1.1em;
+
+    /* Hero layout mobile */
+    --hero-grid: 1fr;
+    --hero-gap: 40px;
+    --hero-min-height: auto;
+    --hero-cards-height: 420px;
+    --hero-title-size: 3.1em;
+    --hero-sub-size: 1em;
+    --hero-sub-max: 340px;
+    --hero-sub-wrap: normal;
+    --hero-text-align: center;
+    --hero-chips-justify: center;
+    --hero-btn-flex: 1 1 0;
+    --hero-py: 40px;
+  }
+}
+
+/* ============================================================
+   MOBILE & TABLET — COMPREHENSIVE RESPONSIVE STYLES
+   ============================================================ */
+
+/* Global: prevent horizontal scroll */
+html, body { overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+img, video, iframe { max-width: 100%; height: auto; }
+
+/* ---- All grids: collapse to 1 col on mobile ---- */
+@media (max-width: 768px) {
+  /* Services, About values, Pricing cards, Contact */
+  div[style*="minmax(300px, 1fr)"],
+  div[style*="minmax(340px, 1fr)"],
+  div[style*="minmax(260px, 1fr)"],
+  div[style*="minmax(300px,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats / small item grids → 2-columns */
+  div[style*="minmax(180px,1fr)"],
+  div[style*="minmax(180px, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Founder two-col grid */
+  div[style*="minmax(300px,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Portfolio alternating: remove order so image sits above text */
+  div[style*="order: 2"],
+  div[style*="order: 1"] {
+    order: 0 !important;
+  }
+
+  /* Founder photo: make it landscape on mobile instead of tall portrait */
+  div[style*="aspectRatio: \"3/4\""] {
+    aspect-ratio: 4 / 3 !important;
+    min-height: unset !important;
+  }
+
+  /* Featured pricing card: remove scale bump */
+  div[style*="scale(1.04)"] {
+    transform: none !important;
+    z-index: auto !important;
+  }
+
+  /* CTA hero buttons: full width */
+  section a[style*="borderRadius: 12"],
+  section button[style*="borderRadius: 12"] {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Subtitle max-width: full on mobile */
+  p[style*="maxWidth: 5"],
+  p[style*="maxWidth: 4"],
+  p[style*="maxWidth: 480"],
+  p[style*="maxWidth: 520"] {
+    max-width: 100% !important;
+  }
+
+  /* Filter pills row: wrap & center */
+  div[style*="gap: 12"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* General section padding collapse */
+  section {
+    padding-left: clamp(16px, 5vw, 48px) !important;
+    padding-right: clamp(16px, 5vw, 48px) !important;
+  }
+
+  /* Prevent card inner padding from overflowing */
+  div[style*="padding: \"40px 32px\""],
+  div[style*="padding: \"40px 36px\""] {
+    padding: 24px 20px !important;
+  }
+
+  div[style*="padding: \"60px 40px\""] {
+    padding: 32px 20px !important;
+  }
+
+  div[style*="padding: \"48px\""] {
+    padding: 24px !important;
+  }
+
+  /* CTA dark boxes */
+  div[style*="borderRadius: 32"] {
+    border-radius: 20px !important;
+  }
+
+  /* Typography: break long words */
+  h1, h2, h3, h4, p, a, span, li {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Footer bottom bar: stack on mobile */
+  div[style*="justifyContent: \"space-between\""][style*="borderTop"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  /* Footer grids */
+  div[style*="var(--footer-grid-1)"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="var(--footer-grid-2)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ---- Tablet: 769–1024px ---- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Services & About values: 2 columns */
+  div[style*="minmax(340px, 1fr)"],
+  div[style*="minmax(260px, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Pricing: stack side-by-side is fine but remove scale transform */
+  div[style*="scale(1.04)"] {
+    transform: none !important;
+  }
+}
+
+/* ---- Extra small mobile: <480px ---- */
+@media (max-width: 480px) {
+  /* Hero headings: shrink further */
+  h1[style*="clamp(2.8em"] {
+    font-size: clamp(1.9em, 8vw, 2.6em) !important;
+  }
+  h1[style*="clamp(2.2em"] {
+    font-size: clamp(1.8em, 7vw, 2.4em) !important;
+  }
+
+  /* Stats grid: 1 column on very small */
+  div[style*="minmax(180px,1fr)"],
+  div[style*="minmax(180px, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Filter buttons: touch-friendly padding */
+  button[style*="borderRadius: 999"] {
+    padding: 8px 16px !important;
+    min-height: 44px !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Cards: compact padding */
+  div[style*="padding: \"32px\""] {
+    padding: 20px !important;
+  }
+}
+
+/* ============================================================
+   HERO CTA BUTTONS — stack as column on mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero-cta-row {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .hero-cta-row > a {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+/* ============================================================
+   FOOTER — mobile layout fix
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Footer brand: prevent text from wrapping mid-word */
+  footer div[style*="alignItems: \"center\", gap: 10, marginBottom: 24"] span,
+  footer div[style*="alignItems: \"center\", gap: 10"] span[style*="fontWeight: 700"] {
+    white-space: nowrap !important;
+  }
+
+  /* Footer contact links: ensure icon + text stay on one line */
+  footer a[style*="display: \"flex\", alignItems: \"center\""] {
+    flex-wrap: nowrap !important;
+    word-break: break-all;
+  }
+
+  /* Pricing inner wrapper: remove border-radius that clips on narrow screens */
+  div[style*="borderTopLeftRadius: 40"],
+  div[style*="borderTopRightRadius: 40"] {
+    border-radius: 20px !important;
+  }
+  div[style*="borderBottomLeftRadius: 40"],
+  div[style*="borderBottomRightRadius: 40"] {
+    border-radius: 20px !important;
+  }
+
+  /* Footer padding on mobile */
+  footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ============================================================
+   GLOBAL: section overrides on mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Ensure no section has padding that overflows */
+  section[style] {
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Price comparison bars on mobile: make Clivik bar tiny */
+  /* Agency bar fills remaining space */
+  div[style*="flex: 1, background: \"#f0f0f0\""],
+  div[style*="background: \"#f5f5f5\""][style*="flex: 1"] {
+    flex: 1 !important;
+  }
+  /* Clivik bar: proportionally short */
+  div[style*="width: \"8%\""],
+  div[style*="width: \"15%\""] {
+    width: 30% !important;
+    min-width: unset !important;
+  }
+}
+
+/* ============================================================
+   HEADING SIZES — Prevent word mid-break on mobile
+   The --title-size CSS variable controls all h2s.
+   On mobile we reduce it so even long words like "Businesses"
+   always wrap at a space, not mid-character.
+   ============================================================ */
+@media (max-width: 480px) {
+  :root {
+    --title-size: 2.4em;
+  }
+
+  /* Catch h1 inner page headings using clamp */
+  h1 {
+    font-size: clamp(1.9em, 8.5vw, 2.6em) !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  h2 {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* ============================================================
+   HEADING TEXT ALIGNMENT — left-align like FAQ (not centered)
+   on mobile, matching the FAQ section style
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Keep all section headings left-aligned on mobile */
+  .heading-left-mobile h1,
+  .heading-left-mobile h2 {
+    text-align: left !important;
+  }
+
+  /* Pricing section text-align: center for internal elements only */
+  section[id="pricing"] h2 {
+    text-align: center !important;
+  }
+}
+
+/* ============================================================
+   FOOTER — 3 column grid to single column on mobile
+   Fixes "Clivi k" brand text wrapping
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Main 3-col footer grid: stack all columns */
+  .footer-cols-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  /* Brand row: prevent icon+text from squishing */
+  .footer-brand-row {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* Brand name: never wrap */
+  .footer-brand-row span {
+    white-space: nowrap !important;
+    font-size: 1.2em !important;
+  }
+}
+
+/* ---- Final footer mobile layout (replaces all earlier attempts) ---- */
+@media (max-width: 768px) {
+  /* Stack brand + links pair vertically */
+  .footer-cols-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  /* Stack Pages and Contact Us vertically too — no 2-col squish */
+  .footer-links-pair {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+  }
+
+  /* Contact links: allow wrapping but keep icon+text on same line */
+  .footer-links-pair a {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* Reduce inner padding of the dark footer box on mobile */
+  div[style*="borderBottomLeftRadius: 40"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* ============================================================
+   PRICING CARD PRICE — prevent ₹11,999 from breaking
+   Applies to all 3 cards on mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Reduce price font-size so it fits on one line */
+  span[style*="fontSize: \"3em\""],
+  span[style*="fontSize: '3em'"] {
+    font-size: clamp(1.6em, 7vw, 2.4em) !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+}
+
+/* Responsive Utilities */
+.desktop-only { display: inline; }
+.desktop-br { display: block; }
+.mobile-br { display: none; }
+@media (max-width: 768px) {
+  .desktop-only, .desktop-br { display: none !important; }
+  .mobile-br { display: block !important; }
+}
+
+
+/* Infinite Marquee for Mobile */
+.slider-wrapper {
+  overflow: hidden;
+  margin: 0 calc(var(--sec-px) * -1); /* Full bleed on mobile */
+  padding: 0 var(--sec-px) 24px;
+}
+.slider-mobile {
+  display: grid;
+  grid-template-columns: var(--grid-3);
+  gap: 24px;
+}
+.mobile-only-card {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    width: 100vw;
+  }
+  .slider-mobile {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 10s linear infinite;
+  }
+  .slider-mobile:hover {
+    animation-play-state: paused;
+  }
+  .mobile-only-card {
+    display: block;
+  }
+  /* Force cards to a specific width on mobile */
+  .slider-mobile > * {
+    width: 300px;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 12px)); /* -50% of content minus half gap */ }
+}
