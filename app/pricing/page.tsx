@@ -9,7 +9,7 @@ const plans = [
   {
     name: "Starter Plan",
     desc: "Great for businesses starting out",
-    price: "₹4,999", featured: false, type: "One-time",
+    price: "₹3,999", featured: false, type: "One-time",
     features: [
       "Free Custom Website Mockup",
       "5-Page Premium Website",
@@ -19,7 +19,7 @@ const plans = [
       "15 Days Free Support"
     ],
     btnText: "Get Started →",
-    waMsg: "Hi Clivik! I am interested in the Starter plan (₹4,999). Please guide me.",
+    waMsg: "Hi Clivik! I am interested in the Starter plan (₹3,999). Please guide me.",
   },
   {
     name: "Growth Plan",
@@ -56,7 +56,7 @@ const plans = [
 ];
 
 const stats = [
-  { n: "₹4,999", label1: "Starting", label2: "Price" },
+  { n: "₹3,999", label1: "Starting", label2: "Price" },
   { n: "5 Days", label1: "Live", label2: "Delivery" },
   { n: "100%", label1: "Free", label2: "Mockup First" },
 ];
