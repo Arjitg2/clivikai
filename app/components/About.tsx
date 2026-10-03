@@ -19,7 +19,7 @@ export default function About() {
             fontFamily: "'FullerSansDT', 'Inter', sans-serif"
           }}>About Clivik</div>
           <h2 style={{
-            fontSize: "var(--title-size)", fontWeight: 700, color: "#0d0e1a",
+            fontSize: "var(--title-size)", fontWeight: 600, color: "#0d0e1a",
             lineHeight: 1.15, letterSpacing: "-0.04em",
             maxWidth: "100%", fontFamily: "'FullerSansDT', 'Inter', sans-serif"
           }}>Built by Someone Who <br className="desktop-br" />Understands Your Business.</h2>

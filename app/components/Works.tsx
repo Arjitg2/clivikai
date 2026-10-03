@@ -95,7 +95,7 @@ export default function Works() {
             }}>Works</div>
             <h2 style={{
               fontSize: "var(--title-size)", fontWeight: 600, color: "#0d0e1a",
-              lineHeight: 1.1, letterSpacing: "-0.04em", maxWidth: "var(--title-max-width)",
+              lineHeight: 1.15, letterSpacing: "-0.04em", maxWidth: "var(--title-max-width)",
               fontFamily: "'FullerSansDT', 'Inter', sans-serif"
             }}>Explore Featured Businesses</h2>
           </div>

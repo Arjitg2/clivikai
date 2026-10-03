@@ -201,7 +201,7 @@ export default function ServicesPage() {
       {/* CTA */}
       <section style={{ background: "#f2f2f7", paddingBottom: 80, paddingLeft: "clamp(20px,6vw,120px)", paddingRight: "clamp(20px,6vw,120px)", textAlign: "center" }}>
         <div style={{ background: "#0d0e1a", borderRadius: 32, padding: "64px 32px", maxWidth: 800, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(2em, 3.8vw, 3.1em)", fontWeight: 700, color: "#fff", marginBottom: 16 }}>Not sure which service you need?</h2>
+          <h2 style={{ fontSize: "var(--title-size)", fontWeight: 600, color: "#fff", lineHeight: 1.15, letterSpacing: "-0.04em", fontFamily: "'FullerSansDT', 'Inter', sans-serif", marginBottom: 16 }}>Not sure which service you need?</h2>
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.1em", marginBottom: 32 }}>WhatsApp us — we'll guide you to the right solution. Free advice, zero pressure.</p>
           <a
             href="https://wa.me/916265022474?text=Hi%20Clivik!%20I%20want%20to%20know%20more%20about%20your%20services."

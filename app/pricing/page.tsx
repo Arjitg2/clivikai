@@ -225,7 +225,7 @@ export default function PricingPage() {
           </div>
 
           {/* FAQ */}
-          <h2 style={{ fontSize: "var(--title-size)", fontWeight: 700, color: "#0d0e1a", marginBottom: 32, textAlign: "center", fontFamily: "'FullerSansDT', 'Inter', sans-serif" }}>Frequently Asked Questions</h2>
+          <h2 style={{ fontSize: "var(--title-size)", fontWeight: 600, color: "#0d0e1a", marginBottom: 32, textAlign: "center", lineHeight: 1.15, letterSpacing: "-0.04em", fontFamily: "'FullerSansDT', 'Inter', sans-serif" }}>Frequently Asked Questions</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 760, margin: "0 auto" }}>
             {faqs.map(faq => (
               <div key={faq.q} style={{ background: "#fff", borderRadius: 16, padding: "24px 28px", border: "1px solid rgba(0,0,0,0.07)" }}>

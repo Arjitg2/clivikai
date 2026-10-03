@@ -122,7 +122,7 @@ export default function AboutPage() {
       {/* Values */}
       <section style={{ background: "#f2f2f7", paddingBottom: 80, paddingLeft: "clamp(20px,6vw,120px)", paddingRight: "clamp(20px,6vw,120px)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(2.9rem, 5.45vw, 4.6rem)", fontWeight: 700, color: "#0d0e1a", marginBottom: 40, textAlign: "center", letterSpacing: "-0.04em", lineHeight: 1.1 }}>What We Stand For</h2>
+          <h2 style={{ fontSize: "var(--title-size)", fontWeight: 600, color: "#0d0e1a", marginBottom: 40, textAlign: "center", letterSpacing: "-0.04em", lineHeight: 1.15, fontFamily: "'FullerSansDT', 'Inter', sans-serif" }}>What We Stand For</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {values.map(v => (
               <div key={v.title} style={{

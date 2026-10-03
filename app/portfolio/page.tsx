@@ -180,7 +180,7 @@ export default function PortfolioPage() {
       {/* CTA */}
       <section style={{ background: "#f2f2f7", padding: "64px clamp(20px,6vw,120px) 64px", textAlign: "center" }}>
         <div style={{ background: "linear-gradient(135deg, #0d0e1a, #131525)", borderRadius: 32, padding: "64px 32px", maxWidth: 800, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(2em, 3.8vw, 3.1em)", fontWeight: 700, color: "#fff", marginBottom: 16 }}>Want a website like these?</h2>
+          <h2 style={{ fontSize: "var(--title-size)", fontWeight: 600, color: "#fff", lineHeight: 1.15, letterSpacing: "-0.04em", fontFamily: "'FullerSansDT', 'Inter', sans-serif", marginBottom: 16 }}>Want a website like these?</h2>
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.1em", marginBottom: 32 }}>We'll build you a free mockup first. See it before you pay for it.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/contact" style={{ 

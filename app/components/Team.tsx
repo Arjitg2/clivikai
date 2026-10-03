@@ -79,12 +79,12 @@ export default function Team() {
         </div>
         <h3
           style={{
-            fontSize: "clamp(2.9rem, 5.45vw, 4.6rem)",
-            fontWeight: 700,
+            fontSize: "var(--title-size)",
+            fontWeight: 600,
             color: "#0d0e1a",
-            lineHeight: 1.1,
+            lineHeight: 1.15,
             letterSpacing: "-0.04em",
-            fontFamily: "'FullerSansDT', 'Inter', -apple-system, sans-serif",
+            fontFamily: "'FullerSansDT', 'Inter', sans-serif",
             marginBottom: 16,
           }}
         >

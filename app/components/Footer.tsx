@@ -166,7 +166,7 @@ export default function Footer() {
           <div style={{ display: "grid", gridTemplateColumns: "var(--footer-grid-1)", gap: "clamp(24px, 5vw, 80px)", alignItems: "center" }}>
             <div>
               <h2 style={{
-                fontSize: "var(--title-size)", fontWeight: 700, color: "#fff",
+                fontSize: "var(--title-size)", fontWeight: 600, color: "#fff",
                 lineHeight: 1.15, letterSpacing: "-0.04em", marginBottom: 24,
                 fontFamily: "'FullerSansDT', 'Inter', sans-serif"
               }}>

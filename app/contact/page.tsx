@@ -120,7 +120,7 @@ export default function ContactPage() {
 
           {/* Left: Info */}
           <div>
-            <h2 style={{ fontSize: "clamp(2em, 3.3vw, 2.6em)", fontWeight: 700, color: "#0d0e1a", marginBottom: "var(--contact-h2-mb, 20px)" }}>
+            <h2 style={{ fontSize: "var(--title-size)", fontWeight: 600, color: "#0d0e1a", marginBottom: "var(--contact-h2-mb, 20px)", lineHeight: 1.15, letterSpacing: "-0.04em", fontFamily: "'FullerSansDT', 'Inter', sans-serif" }}>
               Let&apos;s Build Something Great
             </h2>
             <p style={{ color: "#374151", lineHeight: 1.75, fontSize: "1rem", marginBottom: 36 }}>
