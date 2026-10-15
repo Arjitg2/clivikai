@@ -21,6 +21,7 @@ export default function Testimonials() {
             padding: "8px 16px", borderRadius: 999,
             background: "#fff", fontSize: "0.875rem", fontWeight: 500, color: "#111",
             border: "1px solid rgba(0,0,0,0.08)", marginBottom: 24,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
             fontFamily: "'FullerSansDT', 'Inter', sans-serif"
           }}>Testimonials</div>
           <h2 style={{

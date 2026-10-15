@@ -150,7 +150,7 @@ function ContactForm() {
 }
 
 const socialIcons = [
-  { icon: <IconInstagram size={18} color="currentColor" />, href: "https://www.instagram.com/clivikdigital/?hl=en" },
+  { icon: <IconInstagram size={18} color="currentColor" />, href: "https://www.instagram.com/clivikai/?hl=en" },
   { icon: <IconX size={18} color="currentColor" />, href: "#" },
   { icon: <IconYoutube size={18} color="currentColor" />, href: "#" },
   { icon: <IconDribbble size={18} color="currentColor" />, href: "#" },
@@ -198,7 +198,7 @@ export default function Footer() {
               </p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                 {[
-                  { icon: <IconInstagram size={16} color="rgba(255,255,255,0.9)" />, text: "Instagram", href: "https://www.instagram.com/clivikdigital/?hl=en" },
+                  { icon: <IconInstagram size={16} color="rgba(255,255,255,0.9)" />, text: "Instagram", href: "https://www.instagram.com/clivikai/?hl=en" },
                   { icon: <IconFacebook size={16} color="rgba(255,255,255,0.9)" />, text: "Facebook", href: "https://www.facebook.com/profile.php?id=61589704865610" },
                   { icon: <IconWhatsApp size={16} color="rgba(255,255,255,0.9)" />, text: "WhatsApp", href: "https://wa.me/916265022474" },
                 ].map((s, i) => (

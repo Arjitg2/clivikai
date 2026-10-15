@@ -18,21 +18,6 @@ const works = [
     link: "https://s-three-fitness.netlify.app/",
     imageSrc: "https://res.cloudinary.com/dxvsqh2jw/image/upload/v1790945788/Screenshot_2026-10-02-18-22-14-47_6012fa4d4ddec268fc5c7112cbb265e71_yikgn2.jpg"
   },
-  {
-    title: "Shree Mangalam Properties",
-    link: "https://shri-mangalam.netlify.app/",
-    imageSrc: "/Shree-Mangalam-Properties (1).webp"
-  },
-  {
-    title: "Skyris AI Studio Platform",
-    link: "/portfolio",
-    imageSrc: "/My-Google-AI-Studio-App (1).webp"
-  },
-  {
-    title: "Dental Care Clinic Template",
-    link: "https://dentifybhopal.framer.website/",
-    imageSrc: "/Home-Dentify-free-template (1).webp"
-  },
 ];
 
 function WorkCard({ work }: { work: typeof works[0] }) {
@@ -112,6 +97,7 @@ export default function Works() {
               padding: "8px 16px", borderRadius: 999,
               background: "#fff", fontSize: "0.875rem", fontWeight: 500, color: "#111",
               border: "1px solid rgba(0,0,0,0.08)", marginBottom: 16,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
               fontFamily: "'FullerSansDT', 'Inter', sans-serif"
             }}>Works</div>
             <h2 style={{

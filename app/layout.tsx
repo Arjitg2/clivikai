@@ -81,7 +81,7 @@ const jsonLd = {
       "alternateName": "Clivik AI",
       "url": "https://clivikai.dpdns.org",
       "sameAs": [
-        "https://www.instagram.com/clivikdigital/?hl=en",
+        "https://www.instagram.com/clivikai/?hl=en",
         "https://www.facebook.com/profile.php?id=61589704865610",
       ],
       "contactPoint": {

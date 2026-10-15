@@ -15,7 +15,7 @@ export default function About() {
             padding: "8px 16px", borderRadius: 999,
             background: "#fff", fontSize: "14px", fontWeight: 600, color: "#0d0e1a",
             border: "1px solid rgba(0,0,0,0.08)", marginBottom: 24,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
             fontFamily: "'FullerSansDT', 'Inter', sans-serif"
           }}>About Clivik</div>
           <h2 style={{
