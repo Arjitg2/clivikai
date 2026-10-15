@@ -36,18 +36,15 @@ export default function Navbar() {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  // On non-home pages, the nav sits over a dark header — always show the dark frosted style
+  // Dark frosted style when scrolled, opened, or on non-home pages
   const alwaysDark = !isHome;
-  const navBg = isMobile
-    ? "#fff"
-    : (alwaysDark || scrolled)
-      ? "rgba(13,14,26,0.92)"
-      : "transparent";
-  const navBorder = isMobile
-    ? "1px solid rgba(0,0,0,0.08)"
-    : (alwaysDark || scrolled)
-      ? "1px solid rgba(255,255,255,0.07)"
-      : "1px solid transparent";
+  const isDarkNav = alwaysDark || scrolled || menuOpen;
+  const navBg = isDarkNav
+    ? "rgba(13,14,26,0.92)"
+    : "transparent";
+  const navBorder = isDarkNav
+    ? "1px solid rgba(255,255,255,0.07)"
+    : "1px solid transparent";
 
   return (
     <>
@@ -56,10 +53,10 @@ export default function Navbar() {
         padding: "0 var(--nav-px)", height: "68px",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         transition: "background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease",
-        backdropFilter: isMobile ? "none" : "blur(24px)",
+        backdropFilter: isDarkNav ? "blur(24px)" : "none",
         backgroundColor: navBg,
         borderBottom: navBorder,
-        boxShadow: isMobile ? "0 1px 12px rgba(0,0,0,0.06)" : "none",
+        boxShadow: isDarkNav ? "0 8px 32px rgba(0,0,0,0.2)" : "none",
       }}>
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", minHeight: 44 }}>
@@ -70,7 +67,7 @@ export default function Navbar() {
           }}>
             <IconCloud size={18} color="#fff" />
           </div>
-          <span style={{ fontWeight: 700, fontSize: "1.05rem", color: isMobile ? "#0d0e1a" : "#fff" }}>Clivik</span>
+          <span style={{ fontWeight: 700, fontSize: "1.05rem", color: "#fff" }}>Clivik</span>
           {!isMobile && <>
             <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "1rem" }}>·</span>
             <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.875rem" }}>Digital Solutions</span>
@@ -118,19 +115,19 @@ export default function Navbar() {
           >
             <span style={{
               display: "block", width: 24, height: 2, borderRadius: 2,
-              background: "#0d0e1a",
+              background: "#ffffff",
               transform: menuOpen ? "rotate(45deg) translate(6px, 6px)" : "none",
               transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1)",
             }} />
             <span style={{
               display: "block", width: 24, height: 2, borderRadius: 2,
-              background: "#0d0e1a",
+              background: "#ffffff",
               opacity: menuOpen ? 0 : 1,
               transition: "opacity 0.3s ease",
             }} />
             <span style={{
               display: "block", width: 24, height: 2, borderRadius: 2,
-              background: "#0d0e1a",
+              background: "#ffffff",
               transform: menuOpen ? "rotate(-45deg) translate(6px, -6px)" : "none",
               transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1)",
             }} />
@@ -159,12 +156,13 @@ export default function Navbar() {
       {isMobile && (
         <div style={{
           position: "fixed", top: 68, left: 0, right: 0, zIndex: 998,
-          background: "#fff",
+          background: "rgba(13,14,26,0.98)",
+          backdropFilter: "blur(24px)",
           maxHeight: menuOpen ? "480px" : "0px",
           overflow: "hidden",
           transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
-          borderBottom: menuOpen ? "1px solid rgba(0,0,0,0.08)" : "none",
-          boxShadow: menuOpen ? "0 8px 32px rgba(0,0,0,0.12)" : "none",
+          borderBottom: menuOpen ? "1px solid rgba(255,255,255,0.08)" : "none",
+          boxShadow: menuOpen ? "0 16px 40px rgba(0,0,0,0.4)" : "none",
         }}>
           <div style={{ padding: "16px 24px 24px" }}>
             {navLinks.map((link, i) => {
@@ -177,13 +175,13 @@ export default function Navbar() {
                   style={{
                     display: "flex", alignItems: "center", minHeight: 48,
                     padding: "12px 0",
-                    color: isActive ? "#6c3bff" : "#0d0e1a", textDecoration: "none",
+                    color: isActive ? "#c4b5fd" : "#ffffff", textDecoration: "none",
                     fontSize: "1rem", fontWeight: isActive ? 600 : 500,
-                    borderBottom: i < navLinks.length - 1 ? "1px solid rgba(0,0,0,0.06)" : "none",
+                    borderBottom: i < navLinks.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
                     transition: "color 0.2s",
                   }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#6c3bff"}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = isActive ? "#6c3bff" : "#0d0e1a"}
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#c4b5fd"}
+                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = isActive ? "#c4b5fd" : "#ffffff"}
                 >
                   {link.label}
                 </Link>

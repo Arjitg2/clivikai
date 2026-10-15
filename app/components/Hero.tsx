@@ -87,14 +87,14 @@ export default function Hero() {
           </div>
 
           <h1 style={{
-            fontSize: "calc(var(--hero-title-size) * 1.05)", fontWeight: 700, lineHeight: 1.15,
+            fontSize: "var(--hero-title-size)", fontWeight: 700, lineHeight: 1.15,
             color: "#fff", letterSpacing: "-0.04em", marginBottom: 24,
             maxWidth: "100%", fontFamily: "'FullerSansDT', 'Inter', sans-serif",
           }}>
             Stop Losing Leads.<br />AI & WhatsApp Automation<br />That Grows Your Business.
           </h1>
 
-          <p style={{
+          <p className="hero-subtext" style={{
             color: "rgba(255,255,255,0.92)", fontSize: "1rem",
             marginBottom: 32, fontWeight: 400, lineHeight: 1.6,
             maxWidth: "var(--hero-sub-max)", margin: "0 auto 32px",
@@ -104,7 +104,7 @@ export default function Hero() {
           </p>
 
           {/* Service Chips */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 32, justifyContent: "var(--hero-chips-justify)" }}>
+          <div className="hero-service-chips" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 32, justifyContent: "var(--hero-chips-justify)" }}>
             {[
               { icon: <IconBot size={16} color="#36309d" />, text: "WhatsApp Automation" },
               { icon: <IconGlobe size={16} color="#36309d" />, text: "Website Development" },
@@ -115,6 +115,58 @@ export default function Hero() {
                 <span style={{ color: "#36309d", fontSize: "0.875rem", fontWeight: 600 }}>{chip.text}</span>
               </div>
             ))}
+          </div>
+
+          {/* Satisfied Clients Social Proof Badge (Mobile & Skyris layout) */}
+          <div className="hero-satisfied-badge" style={{
+            alignItems: "center",
+            justifyContent: "var(--hero-chips-justify)" as any,
+            gap: 8,
+            marginBottom: 24,
+            width: "100%",
+          }}>
+            <img src="/hero/bracket-left.svg" alt="" width={18} height={40} style={{ display: "block", flexShrink: 0, opacity: 0.9 }} />
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+              {/* Overlapping avatars */}
+              <div style={{ display: "inline-flex", alignItems: "center" }}>
+                {[
+                  "/hero/avatar-1.png",
+                  "/hero/avatar-2.png",
+                  "/hero/avatar-3.png",
+                  "/hero/avatar-4.png",
+                  "/hero/avatar-5.png"
+                ].map((src, idx, arr) => (
+                  <div key={idx} style={{
+                    width: idx === arr.length - 1 ? 28 : 16,
+                    height: 28,
+                    flexShrink: 0,
+                    position: "relative",
+                    zIndex: idx + 1
+                  }}>
+                    <img
+                      src={src}
+                      alt="Client"
+                      width={28}
+                      height={28}
+                      style={{
+                        width: 28,
+                        height: 28,
+                        borderRadius: "50%",
+                        border: "2px solid #ffffff",
+                        objectFit: "cover",
+                        display: "block",
+                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 5, whiteSpace: "nowrap" }}>
+                <span style={{ color: "#ffffff", fontWeight: 700, fontSize: "0.875rem" }}>+94</span>
+                <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 500, fontSize: "0.875rem" }}>Satisfied clients</span>
+              </div>
+            </div>
+            <img src="/hero/bracket-right.svg" alt="" width={18} height={40} style={{ display: "block", flexShrink: 0, opacity: 0.9 }} />
           </div>
 
           {/* CTAs matching Skyris */}

@@ -271,7 +271,7 @@ body {
     --hero-gap: 40px;
     --hero-min-height: auto;
     --hero-cards-height: 420px;
-    --hero-title-size: 3.1em;
+    --hero-title-size: clamp(2.1rem, 7.8vw, 2.75rem);
     --hero-sub-size: 1em;
     --hero-sub-max: 340px;
     --hero-sub-wrap: normal;
@@ -443,12 +443,27 @@ img, video, iframe { max-width: 100%; height: auto; }
 }
 
 /* ============================================================
-   HERO CTA BUTTONS — stack as column on mobile
+   HERO RESPONSIVE — Mobile layout matching reference
    ============================================================ */
+.hero-satisfied-badge {
+  display: none;
+}
 @media (max-width: 768px) {
+  .hero-subtext {
+    display: none !important;
+  }
+  .hero-service-chips {
+    display: none !important;
+  }
+  .hero-satisfied-badge {
+    display: inline-flex !important;
+    justify-content: center !important;
+    margin: 0 auto 24px !important;
+  }
   .hero-cta-row {
     flex-direction: column !important;
     width: 100% !important;
+    gap: 10px !important;
   }
   .hero-cta-row > a {
     width: 100% !important;
