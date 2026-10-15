@@ -81,11 +81,11 @@ export default function Hero() {
           </div>
 
           <h1 style={{
-            fontSize: "calc(var(--hero-title-size) * 1.1)", fontWeight: 700, lineHeight: 1.15,
+            fontSize: "calc(var(--hero-title-size) * 1.05)", fontWeight: 700, lineHeight: 1.15,
             color: "#fff", letterSpacing: "-0.04em", marginBottom: 24,
             maxWidth: "100%", fontFamily: "'FullerSansDT', 'Inter', sans-serif",
           }}>
-            Stop Losing Leads.<br />Start Running on<br />Autopilot.
+            Stop Losing Leads.<br />AI & WhatsApp Automation<br />That Grows Your Business.
           </h1>
 
           <p style={{
@@ -94,7 +94,7 @@ export default function Hero() {
             maxWidth: "var(--hero-sub-max)", margin: "0 auto 32px",
             whiteSpace: "var(--hero-sub-wrap)",
           }}>
-            WhatsApp automation, AI agents, aur modern websites — sab ek jagah.<br/>Local businesses ke liye, unke budget mein.
+            WhatsApp Business API automation, 24/7 AI agents, aur high-converting websites — sab ek jagah.<br/>Instant 7-second replies and automated lead qualification for modern businesses.
           </p>
 
           {/* Service Chips */}
