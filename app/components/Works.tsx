@@ -18,6 +18,21 @@ const works = [
     link: "https://s-three-fitness.netlify.app/",
     imageSrc: "https://res.cloudinary.com/dxvsqh2jw/image/upload/v1790945788/Screenshot_2026-10-02-18-22-14-47_6012fa4d4ddec268fc5c7112cbb265e71_yikgn2.jpg"
   },
+  {
+    title: "Shree Mangalam Properties",
+    link: "https://shri-mangalam.netlify.app/",
+    imageSrc: "/Shree-Mangalam-Properties (1).webp"
+  },
+  {
+    title: "Skyris AI Studio Platform",
+    link: "/portfolio",
+    imageSrc: "/My-Google-AI-Studio-App (1).webp"
+  },
+  {
+    title: "Dental Care Clinic Template",
+    link: "https://dentifybhopal.framer.website/",
+    imageSrc: "/Home-Dentify-free-template (1).webp"
+  },
 ];
 
 function WorkCard({ work }: { work: typeof works[0] }) {

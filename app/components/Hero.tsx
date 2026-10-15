@@ -79,12 +79,11 @@ export default function Hero() {
       }}>
         {/* Left / Top: Text */}
         <div style={{ textAlign: "var(--hero-text-align)" as React.CSSProperties["textAlign"] }}>
-          {/* Eyebrow Badge */}
+          {/* Eyebrow Label (No Pill, matching Skyris) */}
           <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", borderRadius: 999, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.24)", color: "#fff", fontSize: "0.875rem", fontWeight: 500, marginBottom: 24
+            fontSize: "1.0625rem", fontWeight: 500, color: "rgba(255,255,255,0.85)", letterSpacing: "0.01em", marginBottom: 16
           }}>
-            <IconZap size={16} color="#c4b5fd" />
-            <span>From Clicks to Customers — On Autopilot</span>
+            From Clicks to Customers — On Autopilot
           </div>
 
           <h1 style={{
@@ -118,35 +117,35 @@ export default function Hero() {
             ))}
           </div>
 
-
-          {/* CTAs */}
+          {/* CTAs matching Skyris */}
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "var(--hero-chips-justify)" }} className="hero-cta-row">
             <Link href="https://wa.me/916265022474" target="_blank" rel="noopener noreferrer" style={{
               display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", minHeight: 52,
-              borderRadius: 12, background: "#fff", color: "#3730a3", textDecoration: "none",
+              borderRadius: 12, background: "#6c3bff", color: "#fff", textDecoration: "none",
               fontSize: "1rem", fontWeight: 700, transition: "all 0.25s ease",
-              boxShadow: "0 4px 24px rgba(255,255,255,0.4)",
-              flex: "var(--hero-btn-flex)",
-              justifyContent: "center",
-              whiteSpace: "nowrap",
-            }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#f0f0f0"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.transform = "translateY(0)"; }}
-            >
-              <span>Open WhatsApp</span>
-              <span className="optical-arrow" style={{ fontSize: "1.1em" }}>&rarr;</span>
-            </Link>
-            <Link href="/portfolio" style={{
-              display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", minHeight: 52,
-              borderRadius: 12, background: "#6c3bff", color: "#fff",
-              textDecoration: "none", fontSize: "1rem", fontWeight: 600,
-              border: "none", transition: "all 0.25s ease",
+              boxShadow: "0 8px 32px rgba(108,59,255,0.45)",
               flex: "var(--hero-btn-flex)",
               justifyContent: "center",
               whiteSpace: "nowrap",
             }}
               onMouseEnter={e => { e.currentTarget.style.background = "#5a2fe0"; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "#6c3bff"; e.currentTarget.style.transform = "translateY(0)"; }}
+            >
+              <span>Open WhatsApp</span>
+              <span className="optical-arrow" style={{ fontSize: "1.1em" }}>&rarr;</span>
+            </Link>
+            <Link href="/portfolio" style={{
+              display: "inline-flex", alignItems: "center", gap: 8, padding: "16px 36px", minHeight: 52,
+              borderRadius: 12, background: "rgba(255,255,255,0.12)", color: "#fff",
+              textDecoration: "none", fontSize: "1rem", fontWeight: 600,
+              border: "1px solid rgba(255,255,255,0.24)", transition: "all 0.25s ease",
+              flex: "var(--hero-btn-flex)",
+              justifyContent: "center",
+              whiteSpace: "nowrap",
+              backdropFilter: "blur(8px)",
+            }}
+              onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.2)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; e.currentTarget.style.transform = "translateY(0)"; }}
             >
               <span>View Our Work</span>
             </Link>

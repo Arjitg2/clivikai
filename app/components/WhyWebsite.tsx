@@ -83,22 +83,22 @@ const services = [
 export default function WhyWebsite() {
   return (
     <section style={{
-      background: "#f2f2f7", /* Outer light background */
-      padding: "var(--pricing-outer-py) var(--pricing-outer-px) 0",
+      background: "#f2f2f7",
+      padding: "var(--sec-py) var(--sec-px) 0",
     }}>
       <ScrollReveal>
-      <div style={{ maxWidth: 1280, margin: "0 auto", borderRadius: 40, overflow: "hidden", background: "linear-gradient(160deg, #0d0e1a 0%, #131525 100%)", padding: "var(--pricing-inner-py) var(--pricing-inner-px)" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "calc(var(--sec-mb) * 1.3)" }}>
+        <div style={{ textAlign: "center", marginBottom: "calc(var(--sec-mb) * 1.1)" }}>
           <div style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center",
             padding: "8px 16px", borderRadius: 999,
-            background: "rgba(255,255,255,0.12)", fontSize: "0.875rem", fontWeight: 500,
-            color: "#ffffff", border: "1px solid rgba(255,255,255,0.2)", marginBottom: 24,
+            background: "#fff", fontSize: "0.875rem", fontWeight: 500,
+            color: "#111", border: "1px solid rgba(0,0,0,0.08)", marginBottom: 24,
             fontFamily: "'FullerSansDT', 'Inter', sans-serif"
           }}>What We Do</div>
           <h2 style={{
-            fontSize: "clamp(2em, 9vw, var(--title-size))", fontWeight: 600, color: "#fff",
+            fontSize: "clamp(2em, 9vw, var(--title-size))", fontWeight: 600, color: "#0d0e1a",
             lineHeight: 1.15, letterSpacing: "-0.04em",
             margin: "0 auto",
             fontFamily: "'FullerSansDT', 'Inter', sans-serif",
@@ -110,54 +110,53 @@ export default function WhyWebsite() {
         </div>
 
         {/* 3x2 card grid */}
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, justifyContent: "center" }}>
           {services.map((s, i) => (
             <div
               key={i}
               style={{
-                flex: "1 1 300px",
-                maxWidth: 400,
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#fff",
+                border: "1px solid rgba(0,0,0,0.06)",
                 borderRadius: 20,
-                padding: "32px 28px",
-                transition: "background 0.3s, border-color 0.3s, transform 0.3s",
+                padding: "36px 28px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
+                transition: "all 0.3s ease",
                 cursor: "default",
                 display: "flex",
                 flexDirection: "column",
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(108,59,255,0.1)";
-                el.style.borderColor = "rgba(108,59,255,0.35)";
+                el.style.borderColor = "rgba(108,59,255,0.4)";
+                el.style.boxShadow = "0 16px 48px rgba(108,59,255,0.12)";
                 el.style.transform = "translateY(-6px)";
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(255,255,255,0.04)";
-                el.style.borderColor = "rgba(255,255,255,0.08)";
+                el.style.borderColor = "rgba(0,0,0,0.06)";
+                el.style.boxShadow = "0 4px 24px rgba(0,0,0,0.04)";
                 el.style.transform = "translateY(0)";
               }}
             >
               <div style={{
                 width: 48, height: 48, borderRadius: 12,
-                background: "rgba(108,59,255,0.15)",
+                background: "rgba(108,59,255,0.1)",
                 display: "inline-flex", alignItems: "center", justifyContent: "center",
                 marginBottom: 24,
               }}>
                 {s.icon}
               </div>
-              <h3 style={{ fontSize: "1.35em", fontWeight: 800, color: "#fff", marginBottom: 12, lineHeight: 1.25 }}>{s.title}</h3>
-              <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.9)", lineHeight: 1.6, marginBottom: 20 }}>{s.desc}</p>
+              <h3 style={{ fontSize: "1.35em", fontWeight: 800, color: "#0d0e1a", marginBottom: 12, lineHeight: 1.25 }}>{s.title}</h3>
+              <p style={{ fontSize: "1rem", color: "#4b5563", lineHeight: 1.6, marginBottom: 20 }}>{s.desc}</p>
               
               {/* Bullets */}
-              <div style={{ marginTop: "auto" }}>
+              <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 10 }}>
                 {s.bullets.map((b, bi) => (
-                  <div key={bi} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                  <div key={bi} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <IconCheck size={16} color="#c4b5fd" />
+                      <IconCheck size={16} color="#6c3bff" />
                     </span>
-                    <span style={{ color: "rgba(255,255,255,0.85)", fontSize: "0.9375rem", lineHeight: "1.4" }}>{b}</span>
+                    <span style={{ color: "#374151", fontSize: "0.9375rem", lineHeight: "1.4" }}>{b}</span>
                   </div>
                 ))}
               </div>
