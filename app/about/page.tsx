@@ -75,7 +75,6 @@ export default function AboutPage() {
                 alt="Arjit Gupta — Founder of Clivik"
                 fill
                 style={{ objectFit: "cover" }}
-                priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

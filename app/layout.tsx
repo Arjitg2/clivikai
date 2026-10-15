@@ -1,7 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "./ClientWrapper";
-import Preloader from "./components/Preloader";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://clivikai.dpdns.org"),
@@ -137,13 +143,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
-        <Preloader />
+      <body className={inter.className}>
         <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>

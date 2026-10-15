@@ -38,7 +38,7 @@ const works = [
     category: "Real Estate",
     desc: "A premium real estate website for a Bhopal-based property firm — featuring verified listings, locality exploration, and a seamless contact flow.",
     link: "https://shri-mangalam.netlify.app/",
-    imageSrc: "/Shree-Mangalam-Properties (1).png",
+    imageSrc: "/Shree-Mangalam-Properties (1).webp",
     tags: ["Website", "Property Listings", "SEO"],
     accent: "#6c3bff",
   },
@@ -143,6 +143,8 @@ export default function PortfolioPage() {
                   src={work.imageSrc}
                   alt={work.title}
                   style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

@@ -26,7 +26,14 @@ function ImageMockCard({ title, subtitle, location, rotate, top, left, delay, wi
       </div>
       <div style={{ position: "relative", width: "100%", aspectRatio: "9/16" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={imageSrc} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={title} />
+        <img
+          src={imageSrc}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          alt={title}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div style={{ position: "absolute", inset: 0, background: themeMode === 'dark' ? "linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.1))" : "linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0.1))" }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px 16px 12px" }}>
           <div style={{ fontSize: 12, fontWeight: 800, color: themeMode === 'dark' ? "#fff" : "#111", letterSpacing: 0.5, marginBottom: 4 }}>{title}</div>
@@ -151,15 +158,15 @@ export default function Hero() {
           <div style={{ position: "relative", width: 320, height: "100%" }}>
             <ImageMockCard
               title="Skyris Analytics" subtitle="AI Studio Platform" location="Global"
-              rotate={-10} top="10px" left="-30px" delay={0} width={280} imageSrc="/My-Google-AI-Studio-App (1).png" themeMode="dark"
+              rotate={-10} top="10px" left="-30px" delay={0} width={280} imageSrc="/My-Google-AI-Studio-App (1).webp" themeMode="dark"
             />
             <ImageMockCard
               title="Dentify Bhopal" subtitle="Clinic Management" location="Bhopal"
-              rotate={-2} top="-15px" left="30px" delay={1.2} width={260} imageSrc="/Home-Dentify-free-template (1).png" themeMode="light"
+              rotate={-2} top="-15px" left="30px" delay={1.2} width={260} imageSrc="/Home-Dentify-free-template (1).webp" themeMode="light"
             />
             <ImageMockCard
               title="Sofra Restaurant" subtitle="Digital Dining" location="Bhopal"
-              rotate={8} top="20px" left="100px" delay={0.6} width={270} imageSrc="/Sofra-Restaurant-Template (1).png" themeMode="dark"
+              rotate={8} top="20px" left="100px" delay={0.6} width={270} imageSrc="/Sofra-Restaurant-Template (1).webp" themeMode="dark"
             />
           </div>
         </div>

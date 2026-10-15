@@ -57,7 +57,13 @@ function WorkCard({ work }: { work: typeof works[0] }) {
       {/* Image Preview */}
       <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", background: "#111" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={work.imageSrc} alt={work.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+        <img
+          src={work.imageSrc}
+          alt={work.title}
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          loading="lazy"
+          decoding="async"
+        />
         
         {/* Hover Overlay */}
         <div 
